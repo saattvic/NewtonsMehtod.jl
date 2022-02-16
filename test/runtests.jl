@@ -39,12 +39,12 @@ using Test
     @test newtonroot(f4; x₀ = 10.0, maxiter = 5).iter == 6
 
     # Tests that tol is working
-    @test abs(newtonroot(f2, g2; x₀ = 10.0, tol = 1e-1).value + 0.5) > 
-          abs(newtonroot(f2, g2; x₀ = 10.0, tol = 1e-10).value + 0.5)
-    @test abs(newtonroot(f2; x₀ = 10.0, tol = 1e-1).value + 0.5) >
-          abs(newtonroot(f2; x₀ = 10.0, tol = 1e-10).value + 0.5)
-    @test abs(newtonroot(f3, g3; x₀ = 10.0, tol = 1e-1).value + 0.5) > 
-          abs(newtonroot(f3, g3; x₀ = 10.0, tol = 1e-10).value + 0.5)
-    @test abs(newtonroot(f3; x₀ = 10.0, tol = 1e-1).value + 0.5) >
-          abs(newtonroot(f3; x₀ = 10.0, tol = 1e-10).value + 0.5)
+    @test abs(newtonroot(f2, g2; x₀ = 10.0, tol = 1e-1).value - 1.0) > 
+          abs(newtonroot(f2, g2; x₀ = 10.0, tol = 1e-10).value - 1.0)
+    @test abs(newtonroot(f2; x₀ = 10.0, tol = 1e-1).value - 1.0) >
+          abs(newtonroot(f2; x₀ = 10.0, tol = 1e-10).value - 1.0)
+    @test abs(newtonroot(f3, g3; x₀ = 10.0, tol = 1e-1).value) > 
+          abs(newtonroot(f3, g3; x₀ = 10.0, tol = 1e-10).value)
+    @test abs(newtonroot(f3; x₀ = 10.0, tol = 1e-1).value) >
+          abs(newtonroot(f3; x₀ = 10.0, tol = 1e-10).value)
 end
