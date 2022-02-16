@@ -23,7 +23,7 @@ end
 function newtonroot(f, f′; x₀, tol=1e-7, maxiter=1000)
     res = iterativesolver(f,
                           x₀,
-                          (xold, xnew, fold, fnew, iter) -> norm(xnew - xold) < tol || iter > maxiter,
+                          (xold, xnew, fold, fnew, iter) -> norm(xnew - xold) < 1e-4 || iter > maxiter,
                           (f, x) -> x - f(x) / f′(x))
     if res.iter <= maxiter
         return res
