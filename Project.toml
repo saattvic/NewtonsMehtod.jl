@@ -3,6 +3,10 @@ uuid = "2b07ff36-53c8-4d56-ade4-36e3b984e52b"
 authors = ["Saattvic <saattvic@sauder.ubc.ca> and contributors"]
 version = "0.1.0"
 
+[deps]
+ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+
 [compat]
 julia = "1.7"
 
